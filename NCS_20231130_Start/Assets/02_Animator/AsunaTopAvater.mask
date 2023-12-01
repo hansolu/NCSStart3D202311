@@ -1,0 +1,345 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AsunaTopAvater
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Root
+    m_Weight: 1
+  - m_Path: Root/cMainV
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/1HMeleeHolsterLeg_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/1HMeleeHolsterLeg_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/Foot_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/Foot_L/Toe1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/KneeArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/cHip_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cThigh_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/PistolHolster_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/Foot_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/Foot_R/Toe1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/KneeArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/cHip_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cThigh_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/RifleHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/1HMeleeHolsterBack_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/1HMeleeHolsterBack_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/2HMeleeHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/ShotgunCrossbowHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/BowHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/ArrowQuiver_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/MinigunHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/MissileLauncherHolster_Socket_Back
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Eye_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Eye_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4/Tail5
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1/HairShortI2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1/HairShortI2/HairShortI3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1/HairShortA2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1/HairShortA2/HairShortA3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R/HairShortK2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R/HairShortK2_R/HairShortK3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L/HairShortK2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L/HairShortK2_L/HairShortK3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R/HairShortL2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R/HairShortL2_R/HairShortL3R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L/HairShortL2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L/HairShortL2_L/HairShortL3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Shoulder_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Shoulder_L/ShoulderArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazinePistol_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Melee_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Bow_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineRifle_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazinePistolARK9_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyPistol_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyPistolARK9_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineShotgunKL228_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSniperRifle_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyRifle_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyShotgunKL228_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySniperRifle_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSMG_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySMG_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineMissileLauncher_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyMissileLauncher_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadFlamerTank_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineGRL45_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyGRL45_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMG&MinigunMagazine_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMG&MinigunMagazineEmpty_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineOldPistol_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyOldPistol_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEnergyOld_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineRifleOld_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyRifleOld_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSniperRifleOld_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySniperRifleOld_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Shield_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Reload12Gauge_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Firearm_SocketBoltActionRifle_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Firearm_SocketBoltActionRifleMagazine_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L/Pinky2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L/Pinky2_L/Pinky3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L/Ring2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L/Ring2_L/Ring3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L/Middle2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L/Middle2_L/Middle3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L/Pointer2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L/Pointer2_L/Pointer3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L/Thumb2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L/Thumb2_L/Thumb3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/cWrist_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/ElbowArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/cBicep_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Shoulder_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Shoulder_R/ShoulderArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketPistol_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/FirearmMagazine_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Melee_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ShotgunCrossbow_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Arrow_Socket_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Minigun_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketARK9_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketNKK27_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketPNT34_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketRifle_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketRifleOld_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/HandGrenade_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/MinesExplosives_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ReloadMagazineBoltActionRifle_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ReloadMagazineEmptyBoltActionRifle_Socket_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R/Pinky2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R/Pinky2_R/Pinky3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R/Ring2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R/Ring2_R/Ring3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R/Middle2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R/Middle2_R/Middle3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R/Pointer2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R/Pointer2_R/Pointer3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R/Thumb2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R/Thumb2_R/Thumb3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/cWrist_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/ElbowArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/cBicep_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Boob_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Boob_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cButt_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cButt_R
+    m_Weight: 1
+  - m_Path: BodyMesh
+    m_Weight: 1
+  - m_Path: AsunaBoots
+    m_Weight: 1
+  - m_Path: EyeballLeft
+    m_Weight: 1
+  - m_Path: EyeballRight
+    m_Weight: 1
+  - m_Path: AsunaHair
+    m_Weight: 1
+  - m_Path: AsunaHairTie
+    m_Weight: 1
