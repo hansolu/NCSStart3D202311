@@ -74,3 +74,5 @@ crashlytics-build.properties
 # Custom
 /[Aa]ssets/FreeTestCharacterAsuna/
 /[Aa]ssets/FreeTestCharacterAsuna.meta
+/[Aa]ssets/Samples/
+/[Aa]ssets/Samples.meta
