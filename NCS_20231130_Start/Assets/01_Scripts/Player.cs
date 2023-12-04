@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     SkinnedMeshRenderer renderer; //ø ¿ª ¿‘»˙ ¥ÎªÛ. 
     public Material[] bodies; //ø  Ω√∏Æ¡Ó
 
+    public Transform CameraTr;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
         {
             //renderer.materials[0] = bodies[Random.Range(0, bodies.Length)];                       
             renderer.material = bodies[Random.Range(0, bodies.Length)];
-        }
+        }                
     }
 
     public void SetDraw(/*bool IsOn*/int val)     
