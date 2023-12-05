@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Vector3 vec = Vector3.zero;
+    Vector3 vec = Vector3.zero;        
     Animator anim;
     float speed = 0;
     [SerializeField]
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public Transform handTr; //손에 총을 들려주기 위함
     public Transform holsterTr; //홀스터에 총을 넣어두기 위함
     public Transform PistolTr; //총 자체의 트랜스폼
+    public Transform ShootPosTr;
 
     Vector3 jumpVec = Vector3.zero;
     Vector3 jumpVecOrg = new Vector3(0,10,0); //
@@ -26,8 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     SkinnedMeshRenderer renderer; //옷을 입힐 대상. 
     public Material[] bodies; //옷 시리즈
-
-    public Transform CameraTr;
+        
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         vec.x = Input.GetAxis("Horizontal");
-        vec.z = Input.GetAxis("Vertical");
+        vec.z = Input.GetAxis("Vertical");        
 
         if (vec.x ==0 && vec.z ==0) //가만히 있기
         {            
@@ -60,7 +60,8 @@ public class Player : MonoBehaviour
         }
 
         anim.SetFloat("Speed", speed);
-        transform.Translate(vec.normalized * Time.deltaTime * speed);
+        vec = vec.normalized;
+        transform.Translate(vec * Time.deltaTime * speed);        
 
         if (Input.GetKeyDown(KeyCode.Space)) //스페이스를 딱 누르기 시작한 그때
         {
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Shoot");
             if (IsDraw) //총을 장착중이라면~~~~ 총쏘기 진행..
             {
-                Debug.Log("빵야");
+                Shoot();
             }
         }
 
@@ -139,5 +140,11 @@ public class Player : MonoBehaviour
         // 부모의 위치에 나를 맞춤
         PistolTr.localPosition = Vector3.zero;
         PistolTr.localRotation = Quaternion.identity;
+    }
+
+    public void Shoot()
+    {        
+        GameManager.Instance.GetBullet().Init(
+            ShootPosTr, 10, AllEnum.Type.Player );
     }
 }
