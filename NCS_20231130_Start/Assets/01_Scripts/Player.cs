@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Vector3 vec = Vector3.zero;        
+    float x = 0;
+    Vector3 vec = Vector3.zero;
     Animator anim;
     float speed = 0;
     [SerializeField]
@@ -36,15 +37,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        vec.x = Input.GetAxis("Horizontal");
+        /*vec.*/x = Input.GetAxis("Horizontal");
         vec.z = Input.GetAxis("Vertical");        
 
-        if (vec.x ==0 && vec.z ==0) //가만히 있기
+        if (/*vec.*/x ==0 && vec.z ==0) //가만히 있기
         {            
             speed = 0;
         }
         else
-        {
+        {            
             if (Input.GetKey(KeyCode.LeftShift)) //시프트를 누르고 있으면 걷기 출력
             {
                 //anim.SetFloat("Speed", 2.5f);                
@@ -55,13 +56,14 @@ public class Player : MonoBehaviour
                 //anim.SetFloat("Speed", 5);
                 speed = runSpeed;                
             }
-            anim.SetFloat("PosX", vec.x);
+            anim.SetFloat("PosX", /*vec.*/x);
             anim.SetFloat("PosZ", vec.z);            
         }
 
         anim.SetFloat("Speed", speed);
-        vec = vec.normalized;
-        transform.Translate(vec * Time.deltaTime * speed);        
+        //vec = vec.normalized;
+        transform.Translate(vec * Time.deltaTime * speed);
+        transform.Rotate(0,x,0);
 
         if (Input.GetKeyDown(KeyCode.Space)) //스페이스를 딱 누르기 시작한 그때
         {
