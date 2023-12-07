@@ -17,13 +17,14 @@ public class LoadResoureces : MonoBehaviour
     public int IntValue = 0;
     
     public TempInfos infos;
+
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
         allsprites = Resources.LoadAll<Sprite>("Ingame");
         StartCoroutine(ChangeImgs());                
         
-        //Debug.Log(IntValue);
+        Debug.Log("intvalue 의 값 ㅣ "+IntValue);
         Debug.Log("infos의 C의 내용 : "+ infos.c);
     }
 
