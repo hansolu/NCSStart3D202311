@@ -33,6 +33,7 @@ public class FollowingEnemy : MonoBehaviour
     float targetAngle=0;
 
     public bool DrawRay = false;
+    bool IsMove = false; //현재 움직이는 중인지 체크.
 
     void Start()
     {
@@ -54,7 +55,11 @@ public class FollowingEnemy : MonoBehaviour
         if ( CheckSight())
         {
             //만약 이동중이었으면 잠깐 멈췄다가.
-            
+            if (IsMove)
+            {
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+            }
 
             //시야 안에 대상이 있음.
             anim.SetFloat("Speed", agent.speed);
@@ -64,12 +69,15 @@ public class FollowingEnemy : MonoBehaviour
             agent.SetDestination(targetList[0].transform.position); //목적지 세팅
         }
         else //시야각에 걸리는 것이 없다면
-        {
-            //정찰... => 일정시간마다 다른 구역으로 이동...
+        {            
+            //움직이고 있는 중
+                //목표지점에 다다랐는지 체크, 다다랐다면 멈추기.
+            //움직이는 중이 아님
+                //움직여야할 시간이 됐으면 다음 목표지역으로 이동시작하기            
 
-            anim.SetFloat("Speed", 0);
-            agent.isStopped = true;//멈춤 해제
-            agent.velocity = Vector3.zero;
+            //anim.SetFloat("Speed", 0);
+            //agent.isStopped = true;//멈춤 해제
+            //agent.velocity = Vector3.zero;
         }
         #endregion
 
