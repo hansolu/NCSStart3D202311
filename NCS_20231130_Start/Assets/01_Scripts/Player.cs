@@ -37,10 +37,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        /*vec.*/x = Input.GetAxis("Horizontal");
-        vec.z = Input.GetAxis("Vertical");        
+        //x = Input.GetAxis("Horizontal");//회전
+        vec.x = Input.GetAxis("Horizontal");//회전으로 썼던것을 되돌림
+        vec.z = Input.GetAxis("Vertical");
 
-        if (/*vec.*/x ==0 && vec.z ==0) //가만히 있기
+        //if (x ==0 && vec.z ==0) //가만히 있기 //회전용
+        if (vec.x == 0 && vec.z == 0) //가만히 있기 
         {            
             speed = 0;
         }
@@ -56,14 +58,16 @@ public class Player : MonoBehaviour
                 //anim.SetFloat("Speed", 5);
                 speed = runSpeed;                
             }
-            anim.SetFloat("PosX", /*vec.*/x);
+            //anim.SetFloat("PosX", /*vec.*/x);//회전용
+            anim.SetFloat("PosX", vec.x);//복구
             anim.SetFloat("PosZ", vec.z);            
         }
 
         anim.SetFloat("Speed", speed);
-        //vec = vec.normalized;
+        //vec = vec.normalized; //회전할때는 x값을 좌측이동으로 안썼어서..
+        vec = vec.normalized; //복구
         transform.Translate(vec * Time.deltaTime * speed);
-        transform.Rotate(0,x,0);
+        //transform.Rotate(0,x,0);//회전
 
         if (Input.GetKeyDown(KeyCode.Space)) //스페이스를 딱 누르기 시작한 그때
         {
