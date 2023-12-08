@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
 	{
 		cameraPos = transform.position;
 		// 최초 설정된 target과 카메라의 위치를 바탕으로 distance 값 초기화
-		distance = Vector3.Distance(transform.position, target.position);
+		distance = Vector3.Distance(cameraPos, target.position);
 		// 최초 카메라의 회전 값을 x, y 변수에 저장
 		Vector3 angles = transform.eulerAngles;
 		x = angles.y;
