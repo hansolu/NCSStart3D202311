@@ -29,12 +29,23 @@ public class FollowingEnemy : MonoBehaviour
     LayerMask obstacleMask;
 
     List<Collider> targetList = new List<Collider>();
-    Vector3 targetDir = Vector3.zero;
+    Vector3 targetDir = Vector3.zero;        
     float targetAngle=0;
 
     public bool DrawRay = false;
     bool IsMove = false; //현재 움직이는 중인지 체크.
 
+    Vector3 goalPos = Vector3.zero;
+    
+    Coroutine moveCor = null;
+
+    int PatrolParentNum = 0; //내가 현재 사용하고 있는 정찰 부모패턴 넘버
+    int PatrolNum = 0; //현재 나의 위치를 인덱스화 시킨것.
+    float WaitTime = 0;
+
+    //public void Init(int patrolParentNum, int patrolNum)
+    //{ 
+    //}
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -54,30 +65,18 @@ public class FollowingEnemy : MonoBehaviour
         #region 시야각
         if ( CheckSight())
         {
-            //만약 이동중이었으면 잠깐 멈췄다가.
-            if (IsMove)
-            {
-                agent.isStopped = true;
-                agent.velocity = Vector3.zero;
-            }
+            if (moveCor !=null)
+            { 
+                StopCoroutine(moveCor);
+                moveCor = null;
+            }            
 
-            //시야 안에 대상이 있음.
-            anim.SetFloat("Speed", agent.speed);
-            anim.SetFloat("PosX", agent.velocity.x);
-            anim.SetFloat("PosZ", agent.velocity.z);
-            agent.isStopped = false;//멈춤 해제
-            agent.SetDestination(targetList[0].transform.position); //목적지 세팅
+            if (IsArrive()==false)            
+                SetMove();
         }
         else //시야각에 걸리는 것이 없다면
-        {            
-            //움직이고 있는 중
-                //목표지점에 다다랐는지 체크, 다다랐다면 멈추기.
-            //움직이는 중이 아님
-                //움직여야할 시간이 됐으면 다음 목표지역으로 이동시작하기            
-
-            //anim.SetFloat("Speed", 0);
-            //agent.isStopped = true;//멈춤 해제
-            //agent.velocity = Vector3.zero;
+        {
+            Patrol();
         }
         #endregion
 
@@ -152,7 +151,6 @@ public class FollowingEnemy : MonoBehaviour
     }
     #endregion 
 
-
     public bool CheckSight()
     {
         targetList.Clear();
@@ -169,17 +167,71 @@ public class FollowingEnemy : MonoBehaviour
                 {
                     //대상.
                     targetList.Add(cols[i]);
-
                 }
             }        
 
             if (targetList.Count > 0) //시야 안에 대상이 있음        
-                return true;          
+            {
+                goalPos = targetList[0].transform.position; //목표위치를 타겟0번친구로 잡아줌...
+                return true;
+            }
             else //대상없음          
                 return false;            
         }
         else     
             return false;                   
+    }
+
+    bool IsArrive()
+    {
+        //목표지점에 다다랐는지 체크, 다다랐다면 멈추기.
+        if ((transform.position - goalPos).sqrMagnitude <= 1) //a
+        {            
+            IsMove = false;
+            anim.SetFloat("Speed", 0);
+            agent.isStopped = true;//멈춤 
+            agent.velocity = Vector3.zero;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void SetMove()
+    {
+        IsMove = true;
+        //시야 안에 대상이 있음.
+        anim.SetFloat("Speed", agent.speed);
+        anim.SetFloat("PosX", agent.velocity.x);
+        anim.SetFloat("PosZ", agent.velocity.z);
+        agent.isStopped = false;//멈춤 해제        
+        agent.SetDestination(goalPos); //목적지 세팅
+    }
+    public void Patrol()
+    {
+        //움직이고 있는 중
+        if (IsMove)
+        {
+            IsArrive(); //도착했다면 알아서 멈춤...
+        }
+        else//움직이는 중이 아님
+        {
+            //움직여야할 시간이 됐으면 다음 목표지역으로 이동시작하기            
+            if (moveCor == null) //코루틴 한번씩만...
+                moveCor = StartCoroutine(SetNewGoal());
+        }
+    }
+
+    IEnumerator SetNewGoal()
+    {
+        WaitTime = Random.Range(0.5f, 1f);
+        Debug.Log("그자리 대기시간"+ WaitTime);
+        yield return new WaitForSeconds(WaitTime);
+        goalPos = GameManager.Instance.GetNextPatrol(PatrolParentNum,ref PatrolNum, true);
+        SetMove();                
+        moveCor = null;        
     }
 }
 
