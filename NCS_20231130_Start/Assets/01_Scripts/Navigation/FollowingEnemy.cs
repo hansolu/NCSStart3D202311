@@ -15,8 +15,8 @@ public class FollowingEnemy : MonoBehaviour
     
     void Update()
     {
-        //Vector3.Distance(playerTr.position, transform.position) == 정확한 거리차이 (함수)
-        //(playerTr.position- transform.position ).Magnitude == 정확한 거리차이(변수 프로퍼티)
+        //Vector3.Distance(playerTr.position, transform.position) > 5   ///  == 정확한 거리차이 (함수)
+        //(playerTr.position- transform.position ).Magnitude > 5 == 정확한 거리차이(변수 프로퍼티)
         if ((playerTr.position- transform.position ).sqrMagnitude > 25 ) //거리차이의 제곱. 루트안씌운거. 루트를 안씌운 제곱상태이기떄문에
             //내가 원하는 거리 5 * 5 해서 25인것... 
 
