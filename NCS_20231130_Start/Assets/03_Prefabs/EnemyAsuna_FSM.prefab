@@ -298,10 +298,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6642020520485182361}
   - component: {fileID: 778312036686889443}
-  - component: {fileID: 9179363813228565765}
   - component: {fileID: 9179363813228565766}
+  - component: {fileID: 8742389104442581858}
+  - component: {fileID: 5123208800476602091}
+  - component: {fileID: 8540899738122744334}
   m_Layer: 6
-  m_Name: EnemyAsuna
+  m_Name: EnemyAsuna_FSM
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,29 +353,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9179363813228565765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297970530845688099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8081b58940486e14a849770daebcc25a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RayTr: {fileID: 2082523692}
-  playerTr: {fileID: 0}
-  ViewAngle: 120
-  ViewDistance: 5
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  DrawRay: 0
 --- !u!195 &9179363813228565766
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -396,6 +375,45 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8742389104442581858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297970530845688099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b47eb3f4e313147952f2de168847e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5123208800476602091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297970530845688099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c77b32231dd7c489814c1659e6834e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NowState: 4
+  PatterParentNum: 0
+--- !u!114 &8540899738122744334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297970530845688099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed4e29da2c74b44bb6372154d2e79f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
 --- !u!1 &6498337727870801080
 GameObject:
   m_ObjectHideFlags: 0

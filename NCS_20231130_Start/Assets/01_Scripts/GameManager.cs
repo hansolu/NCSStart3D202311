@@ -13,7 +13,8 @@ public class GameManager : Singleton<GameManager>
     //정찰패턴부모와 딕셔너리로 묶은 정찰패턴
 
     //임시변수
-    GameObject tmpobj = null;    
+    GameObject tmpobj = null;
+    public Player player;
 
     void Start()
     {        
