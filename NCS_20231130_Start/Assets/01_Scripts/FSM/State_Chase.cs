@@ -6,6 +6,7 @@ using UnityEngine;
 public class State_Chase : State
 {
     Vector3 TargetPos = Vector3.zero;
+    float dist = 0;
     public State_Chase(Enemy enemy, SetStateDel StateDel) : base(enemy, StateDel)
     {
     }
@@ -24,7 +25,10 @@ public class State_Chase : State
     public override void OnStateExit()
     {
         TargetPos = Vector3.zero;
-        enemy.TargetTr = null;
+        //enemy.TargetTr = null;
+        //추격하느라고 달리다가
+        //Exit하면 일단 정지...할테니...
+        enemy.Idle(); //정지하기~
     }
 
     public override void OnStateStay()
@@ -32,17 +36,23 @@ public class State_Chase : State
         //플레이어와의 간격이 공격하기에 충분한 거리가 되었다면
         if (enemy.CheckSight(enemy.AttackRange))
         {
-            StateDel(AllEnum.StateEnum.Attack);
+            StateDel(AllEnum.StateEnum.Attack);//공격상태로 변환
             return;
         }
         else
         {
+            dist = (TargetPos - enemy.transform.position).sqrMagnitude;
             //목적지에 도착함. 도착하는때까지 공격거리안에 사람이 없었음...
 
             //그러면 일없는거니까, patrol상태로 돌아감...
-            if ((TargetPos - enemy.transform.position).sqrMagnitude <=1 )
+            if (dist <= 1) //도착지점에 도착한 경우
             {
-                StateDel(AllEnum.StateEnum.Patrol);
+                StateDel(AllEnum.StateEnum.Patrol);//순찰상태로 변환
+                return;
+            }
+            else if (dist > enemy.ViewDistance) //추격하기에도 너무 먼거리
+            {
+                StateDel(AllEnum.StateEnum.Patrol);//순찰상태로 변환
                 return;
             }
         }        

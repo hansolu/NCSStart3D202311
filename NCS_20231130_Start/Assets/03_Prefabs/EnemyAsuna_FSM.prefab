@@ -399,8 +399,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c77b32231dd7c489814c1659e6834e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NowState: 4
+  NowState: 7
   PatterParentNum: 0
+  ViewAngle: 120
+  ViewDistance: 10
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  ShootPosTr: {fileID: 1059050584736008020}
+  AttackRange: 3
+  TargetTr: {fileID: 0}
+  FarAttackDelayTime: 1
 --- !u!114 &8540899738122744334
 MonoBehaviour:
   m_ObjectHideFlags: 0

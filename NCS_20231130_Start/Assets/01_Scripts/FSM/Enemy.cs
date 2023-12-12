@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     [Tooltip("방해물 레이어 선택")]    
     public LayerMask obstacleMask;
 
+    public Transform ShootPosTr; //총구위치
+
     public float AttackRange = 0;
 
     List<Collider> targetList = new List<Collider>();
@@ -35,9 +37,14 @@ public class Enemy : MonoBehaviour
     float targetAngle = 0;//시야각
 
     ////대상의 위치도 
-    ////계속 추격하고 싶으면
-    public Transform TargetTr; 
+    ////계속 추격하고 싶으면    
+    [Header("TargetTr은 인스펙터 창에서 건들지 마세요")]
+    [Tooltip("타겟 잘 들어와있는지 확인용임")]
+    public Transform TargetTr;
 
+    public float FarAttackDelayTime = 1;//원거리공격 쿨타임
+    public float NearAttackDelayTime = 0.8f; //근접공격 쿨타임
+    Coroutine AttackCor = null;
     //그 위치로, 해당대상이 도망간다면 더이상 못쫓아가게 하고싶다면
     //public Vector3 TargetPos = Vector3.zero;    
 
@@ -76,6 +83,14 @@ public class Enemy : MonoBehaviour
         anim.Walk(agent.velocity.x, agent.velocity.z);
     }
 
+    public void SetWeaponOn(bool isFar, bool isOn)
+    {
+        if (isFar)
+            anim.Gun_Draw(isOn);
+        else
+            anim.Sword_Draw(isOn);
+    }
+
     public bool CheckSight( float range )
     {
         targetList.Clear();
@@ -108,4 +123,99 @@ public class Enemy : MonoBehaviour
         else
             return false;
     }
+
+    public void AttackNear(bool isStart)
+    {
+        if (isStart)
+        {
+            if (AttackCor == null)
+                AttackCor = StartCoroutine(NearAttackDelay());
+        }
+        else
+        {
+            if (AttackCor != null)
+                StopCoroutine(AttackCor);
+            AttackCor = null;
+        }
+    }
+    IEnumerator NearAttackDelay()
+    {
+        //총쏘는 모션 출력
+        anim.Attack(false); //근거리 공격모션 출력
+        Debug.Log("근거리 공격함");        
+        Collider[] cols = Physics.OverlapSphere(transform.position,
+           AttackRange, targetMask);
+        if (cols.Length > 0)
+        {
+            targetList.Clear();
+            for (int i = 0; i < cols.Length; i++)
+            {
+                targetDir = (cols[i].transform.position - transform.position).normalized;                
+                if (Physics.Raycast(transform.position, targetDir, AttackRange, obstacleMask) == false)
+                //나의 위치에서 대상을 향해 레이를 쐈을때, 장애물이 막고잇지도않음
+                {
+                    //대상.
+                    targetList.Add(cols[i]);
+                    //return true; //만약 내가 쫓는 대상이 무조건 플레이어 뿐이라면
+                }
+            }
+
+            if (targetList.Count > 0) //시야 안에 대상이 있음        
+            {
+                for (int i = 0; i < targetList.Count; i++)
+                {
+                    //만약 위에 걸러내는 레이어에 플레이어와, 적을 둘다 넣어놨고
+                    IHit hit = targetList[i].GetComponent<IHit>();
+                    //적에도 IHit를 똑같이 넣어뒀다면
+                    if (hit!=null)
+                    {
+                        Debug.Log("사람 공격");
+                        hit.Hit(5); //그 대상이 Player 건, Enemy건 데미지를 가할 수 있음                                    
+                    }
+                }                
+            }            
+        }
+
+        yield return new WaitForSeconds(NearAttackDelayTime);
+        AttackCor = null;
+    }
+
+    public void Shoot(bool isStart)
+    {
+        if (isStart)
+        {
+            if (AttackCor == null)         
+                AttackCor = StartCoroutine(ShootDelay());                    
+        }
+        else
+        {
+            if (AttackCor != null)
+                StopCoroutine(AttackCor);
+            AttackCor = null;
+        }
+    }
+
+    IEnumerator ShootDelay()
+    {
+        //총쏘는 모션 출력
+        anim.Attack(true);
+
+        //실제로 총알을 발사함.
+        GameManager.Instance.GetBullet().Init(
+           ShootPosTr/*총구위치*/,
+           5/*공격력*/, AllEnum.Type.Enemy);
+
+        yield return new WaitForSeconds(FarAttackDelayTime);
+        AttackCor = null;
+    }
+
+
+    //이 함수는 플레이어와 에너미를 같은 fbx를 사용하기 때문에
+    //그 fbx에 추가된 애니메이션 이벤트 에서 부르기로한 
+    //SetDraw가 없어서 오류가 남.
+    //해당 오류를 없애기 위해 그냥 만들어둠.
+    public void SetDraw(int val)
+    { 
+    }
 }
+

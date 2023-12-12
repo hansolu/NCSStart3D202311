@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,IHit
 {
     float x = 0;
     Vector3 vec = Vector3.zero;
@@ -152,5 +152,10 @@ public class Player : MonoBehaviour
     {        
         GameManager.Instance.GetBullet().Init(
             ShootPosTr, 10, AllEnum.Type.Player );
+    }
+
+    public void Hit(float damage)
+    {
+        Debug.Log("플레이어가 "+damage+ "의 데미지를 입음");
     }
 }

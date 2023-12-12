@@ -23,12 +23,14 @@ public class StateMachine : MonoBehaviour //이거는 좀 Monobehavior를 상속받을 필
         //내 행동 딕셔너리 세팅...
         owner = GetComponent<Enemy>();
         
-        StateDic.Add(AllEnum.StateEnum.Patrol, new State_Patrol(owner, SetState));
+        StateDic.Add(AllEnum.StateEnum.Patrol, 
+            new State_Patrol(owner, SetState));
         //StateDic.Add(AllEnum.StateEnum.Idle , new State_Idle(owner, SetState));
         //StateDic.Add(AllEnum.StateEnum.Walk, new State_Walk(owner, SetState));
         StateDic.Add(AllEnum.StateEnum.Chase, new State_Chase(owner, SetState));
         //공격
-
+        StateDic.Add(AllEnum.StateEnum.Attack, new State_Attack(owner, SetState));
+        
         ExState = AllEnum.StateEnum.End;
         SetState(AllEnum.StateEnum./*Idle*/Patrol);
         IsPlay = true;

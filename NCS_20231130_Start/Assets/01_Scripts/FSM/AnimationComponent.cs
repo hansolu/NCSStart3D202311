@@ -35,6 +35,27 @@ public class AnimationComponent : MonoBehaviour
         anim.SetFloat("PosZ", z);
     }
 
-    public void Attack()
-    { }
+    public void Gun_Draw(bool isOn) //총장전
+    {
+        if (isOn)        
+            anim.SetTrigger("Draw"); //장착애니메이션
+        else
+            anim.SetTrigger("Holster"); //해제 애니메이션
+    }
+    public void Sword_Draw(bool isOn)
+    {
+        if (isOn)
+            Debug.Log("검을 장착하는 애니메이션 진행");
+        else
+            Debug.Log("검을 장착해제하는 애니메이션");
+    }
+    public void Attack(bool IsFar)
+    {
+        if (IsFar)
+        {
+            anim.SetTrigger("Shoot");
+        }
+        else
+        { }
+    }
 }

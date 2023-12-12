@@ -10,6 +10,7 @@ public abstract class State /*: MonoBehaviour*/
     //소유주 에 대한 정보도 가지고 있어야 함.
     protected Enemy enemy; //행동 주인.
     public delegate void SetStateDel(AllEnum.StateEnum _enum);
+    
     protected SetStateDel StateDel;
     public State(Enemy enemy, SetStateDel StateDel)
     {
