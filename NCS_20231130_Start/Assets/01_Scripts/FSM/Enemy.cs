@@ -30,7 +30,8 @@ public class Enemy : MonoBehaviour
 
     public Transform ShootPosTr; //총구위치
 
-    public float AttackRange = 0;
+    public float AttackRange = 0; //근거리 공격범위
+    public float AttackFarRange = 0; //원거리 공격범위
 
     List<Collider> targetList = new List<Collider>();
     Vector3 targetDir = Vector3.zero;
@@ -42,14 +43,17 @@ public class Enemy : MonoBehaviour
     [Tooltip("타겟 잘 들어와있는지 확인용임")]
     public Transform TargetTr;
 
-    public float FarAttackDelayTime = 1;//원거리공격 쿨타임
-    public float NearAttackDelayTime = 0.8f; //근접공격 쿨타임
+    public float FarAttackDelayTime = 2;//원거리공격 쿨타임
+    public float NearAttackDelayTime = 1f; //근접공격 쿨타임
     Coroutine AttackCor = null;
     //그 위치로, 해당대상이 도망간다면 더이상 못쫓아가게 하고싶다면
     //public Vector3 TargetPos = Vector3.zero;    
 
     //Enemy도 statemachine을 들고 있게 하는 방법
     //public StateMachine statemachine { get; private set; }
+
+    AllEnum.MyWeaponState weaponState = AllEnum.MyWeaponState.None;
+        
 
     void Start()
     {        
@@ -59,7 +63,12 @@ public class Enemy : MonoBehaviour
 
         //statemachine을 변수로 가지고 있게 하고 진행해도되고..
         //요떄 한번만 부르고 싶다면 이렇게 진행해도될거고....
-        GetComponent<StateMachine>().SetInit();
+
+        //이거는 FSM용..
+        //GetComponent<StateMachine>().SetInit();
+
+        //비헤이비어트리 세팅.
+        GetComponent<EnemyBehaviorTree>().SetInit();
     }
 
     public void Idle()
@@ -70,8 +79,12 @@ public class Enemy : MonoBehaviour
     }
 
     //이동 멈추는 함수
-    public void Move(Vector3 vec)
+    public void Move(Vector3 vec, bool anim = false) 
     {
+        if (anim)
+        {
+            SetMoveAnim();
+        }
         agent.isStopped = false;
         agent.SetDestination(vec);
         //조건에 따라서
@@ -83,12 +96,43 @@ public class Enemy : MonoBehaviour
         anim.Walk(agent.velocity.x, agent.velocity.z);
     }
 
-    public void SetWeaponOn(bool isFar, bool isOn)
+    public void SetWeaponOff()
     {
+        Debug.Log(weaponState + " 무기해제");
+        if (weaponState == AllEnum.MyWeaponState.Gun)
+        {
+            SetWeaponOn(true, false);
+        }
+        else if (weaponState == AllEnum.MyWeaponState.Sword)
+        {
+            SetWeaponOn(false, false);
+        }
+        weaponState = AllEnum.MyWeaponState.None;
+    }
+    public void SetWeaponOn(bool isFar, bool isOn)
+    {        
         if (isFar)
+        { 
             anim.Gun_Draw(isOn);
+            if (isOn)
+            {
+                weaponState = AllEnum.MyWeaponState.Gun;
+            }
+            else
+            {
+                weaponState = AllEnum.MyWeaponState.None;
+            }
+        }
         else
+        { 
             anim.Sword_Draw(isOn);
+            if (isOn)
+            {
+                weaponState = AllEnum.MyWeaponState.Sword;
+            }
+            else
+                weaponState = AllEnum.MyWeaponState.None;
+        }
     }
 
     public bool CheckSight( float range )
@@ -127,15 +171,25 @@ public class Enemy : MonoBehaviour
     public void AttackNear(bool isStart)
     {
         if (isStart)
-        {
+        {            
             if (AttackCor == null)
+            {
+                if (weaponState != AllEnum.MyWeaponState.Sword)
+                {
+                    SetWeaponOff(); //혹여나 총을 들었다면 총을 해제하고
+                    SetWeaponOn(false, true);//검을 들기                    
+                }
                 AttackCor = StartCoroutine(NearAttackDelay());
+            }
         }
         else
         {
             if (AttackCor != null)
+            {
+                SetWeaponOff();
                 StopCoroutine(AttackCor);
-            AttackCor = null;
+            }
+            AttackCor = null;            
         }
     }
     IEnumerator NearAttackDelay()
@@ -181,22 +235,43 @@ public class Enemy : MonoBehaviour
     }
 
     public void Shoot(bool isStart)
-    {
+    {        
         if (isStart)
         {
-            if (AttackCor == null)         
-                AttackCor = StartCoroutine(ShootDelay());                    
+            //#######이거는 BT의 AttackFar의 델리게이트를 지키기 위해
+            //원거리 공격을 할때는 가만히 서서 하도록 수정함.
+            Idle();
+                        
+            if (AttackCor == null)
+            {
+                //#######BT에서 쓰기위해 추가된 무기장착관련 내용들
+                if (weaponState != AllEnum.MyWeaponState.Gun)
+                {
+                    SetWeaponOff(); //일단 이전 장착 해제.               
+                    SetWeaponOn(true, true);//총기 장착                                    
+                }
+
+                AttackCor = StartCoroutine(ShootDelay());
+            }                
         }
         else
-        {
+        {                        
             if (AttackCor != null)
+            {                
                 StopCoroutine(AttackCor);
+                //#######BT에서 쓰기위해 추가된 무기장착관련 내용들            
+                SetWeaponOff();
+            }                
             AttackCor = null;
         }
     }
 
     IEnumerator ShootDelay()
     {
+        //총을 장착전부터 쏘기때문에 애니메이션쪽에 타이밍맞춰서 
+        //그냥 부르도록 하는것도 방법
+        
+        Debug.Log("쏜다");
         //총쏘는 모션 출력
         anim.Attack(true);
 

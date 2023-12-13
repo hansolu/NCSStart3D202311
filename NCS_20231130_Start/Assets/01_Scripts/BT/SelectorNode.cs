@@ -19,13 +19,13 @@ public class SelectorNode : Node
         {
             switch (node.Evaluate())
             {
-                case NodeState.Running:
-                    return NodeState.Running;
+                case NodeState.Running:                    
+                    return state = NodeState.Running;
                     
                 case NodeState.Success:
-                    return NodeState.Success;
+                    return state = NodeState.Success;
 
-                case NodeState.Failure:
+                case NodeState.Failure:                    
                     continue;                    
                 default:
                     break;

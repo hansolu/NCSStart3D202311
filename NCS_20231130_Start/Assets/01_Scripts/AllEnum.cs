@@ -27,4 +27,11 @@ public class AllEnum
     //    Idle,
     //    Walk,
     //}
+
+    public enum MyWeaponState
+    { 
+        None,
+        Sword,
+        Gun
+    }
 }

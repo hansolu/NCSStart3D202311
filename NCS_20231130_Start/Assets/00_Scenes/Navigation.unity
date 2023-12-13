@@ -451,6 +451,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210769833}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &377693631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5123208800476602091, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: AttackFarRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297970530845688099, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_Name
+      value: EnemyAsuna_BT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642020520485182361, guid: 7b28e914988b38749819a740829a3b34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b28e914988b38749819a740829a3b34, type: 3}
 --- !u!1 &383952604
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3527,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4805358206489851915, guid: 798c05ee1e2530b4ebb1d9d7e5a2c6a9, type: 3}
   m_PrefabInstance: {fileID: 1449805347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1851637974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1958734872, guid: 798c05ee1e2530b4ebb1d9d7e5a2c6a9, type: 3}
+  m_PrefabInstance: {fileID: 1449805347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086b7d154b7f202439e02ec22e3c1d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902703561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +3818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489305615537871917, guid: 736fb28b1a51dc243bc92feb23ddd55f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1851637974}
     - target: {fileID: 1175027280252164464, guid: 736fb28b1a51dc243bc92feb23ddd55f, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -3826,6 +3902,10 @@ PrefabInstance:
     - target: {fileID: 6297970530845688099, guid: 110adc642d2f97c4c85d3d0d6f98c276, type: 3}
       propertyPath: m_Name
       value: EnemyAsuna_FSM
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297970530845688099, guid: 110adc642d2f97c4c85d3d0d6f98c276, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6642020520485182361, guid: 110adc642d2f97c4c85d3d0d6f98c276, type: 3}
       propertyPath: m_RootOrder
