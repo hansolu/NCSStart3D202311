@@ -14,6 +14,10 @@ public class CheckIsPlayerNear : Node
     }
     public override NodeState Evaluate()
     {
+        //3가지. 
+        // (PlayerTr.position - transform.position).sqrmagnitude ==거리*거리
+        //위의것은 빠르지만 부정확함...
+
         dist = Vector3.Distance(PlayerTr.position, transform.position);
         if (dist >= 5)
         {            
@@ -23,13 +27,15 @@ public class CheckIsPlayerNear : Node
         {
             return state = NodeState.Failure;
         }
-        else
+        else //거리가 2~5사이면....
         {
             if (state != NodeState.Failure)
             {
                 return state = NodeState.Running;
             }
-            else
+            else //기존 상태가 Failure 즉 2이하였던 상황이었고
+                //뭔가 2보다 거리가 더 멀어졌지만
+                //5이하일때...
                 return NodeState.Failure;
         }        
     }

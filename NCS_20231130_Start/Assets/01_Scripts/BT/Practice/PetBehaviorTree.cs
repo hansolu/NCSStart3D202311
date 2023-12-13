@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PetBehaviorTree : MonoBehaviour
 {
-    public Transform PlayerTr;
+    public Transform PlayerTr; //플레이어 위치.
     Node rootNode = null;   
     void Start()
     {
-        rootNode = new SelectorNode(
-            new List<Node>
+
+        rootNode = new SelectorNode( 
+            new List<Node>()
             {
                 new SequenceNode(
                     new List<Node>
