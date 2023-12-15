@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 {        
     [Header("NowState는 인스펙터 창에서 건들지 마세요")]
     public AllEnum.StateEnum NowState =AllEnum.StateEnum.End;//현재상태
-    AnimationComponent anim;
+    AnimationComponent anim; //얘는 진짜 단순히 애니메이션 출력...
     NavMeshAgent agent;
 
     [Tooltip("게임매니저에 있는 정찰 패턴 부모 넘버 부여")]

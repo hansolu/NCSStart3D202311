@@ -34,4 +34,20 @@ public class AllEnum
         Sword,
         Gun
     }
+
+    public enum InventoryKind
+    { 
+        Inventory_Player,
+        //Store,
+        //Storage,
+
+        End
+    }
+
+    public enum UIKind //Ui를 무한정 막 다 켜기는 좀...
+    { 
+        Inventory,
+
+        End
+    }
 }
