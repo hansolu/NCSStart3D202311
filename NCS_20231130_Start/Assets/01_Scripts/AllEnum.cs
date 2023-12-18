@@ -50,4 +50,14 @@ public class AllEnum
 
         End
     }
+
+    public enum ItemType
+    { 
+        None,
+        Food,
+        Sword,
+        Armor,
+
+        End
+    }
 }
