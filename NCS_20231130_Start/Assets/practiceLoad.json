@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "ObjectType": 0,
+      "HP_Min": 100,
+      "HP_Max": 150,
+      "Speed_Min": 2,
+      "Speed_Max": 4,
+      "Color": "red"
+    },
+    {
+      "ObjectType": 1,
+      "HP_Min": 200,
+      "HP_Max": 250,
+      "Speed_Min": 5,
+      "Speed_Max": 7,
+      "Color": "blue"
+    },
+    {
+      "ObjectType": 2,
+      "HP_Min": 100,
+      "HP_Max": 300,
+      "Speed_Min": 1,
+      "Speed_Max": 10,
+      "Color": "green"
+    }
+  ]
+}

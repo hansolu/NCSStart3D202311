@@ -60,4 +60,13 @@ public class AllEnum
 
         End
     }
+
+    public enum ObjectType
+    { 
+        Cube,
+        Sphere,
+        Capsule,
+
+        End
+    }
 }

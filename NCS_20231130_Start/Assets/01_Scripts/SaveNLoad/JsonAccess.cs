@@ -65,6 +65,7 @@ public class JsonTestClass_List //만약 추가로 JsonTestClass 데이터를 늘려가면서 
     public List<JsonTestClass> classlist = new List<JsonTestClass>();
 }
 
+//정말 데이터 저장용으로써의 클래스... 순수 데이터. 유니티에서의 무언가랑 상관없는 정말 수치들... 
 public class JsonTestClass
 {
     public int i;
