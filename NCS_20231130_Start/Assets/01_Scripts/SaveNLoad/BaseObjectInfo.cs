@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//실제 유니티의 하이어라키상에 존재할 몸을가진 객체에 붙을 스크립트
 public class BaseObjectInfo : MonoBehaviour
 {    
     public AllEnum.ObjectType Type { get; private set; }
