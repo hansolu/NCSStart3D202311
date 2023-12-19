@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<XMLTestClass xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <i>8</i>
+  <f>14.8854227</f>
+  <d>1.7819010543823242</d>
+  <b>true</b>
+  <s>n</s>
+  <arr>
+    <int>0</int>
+    <int>1</int>
+    <int>2</int>
+    <int>3</int>
+    <int>4</int>
+    <int>5</int>
+    <int>6</int>
+    <int>7</int>
+  </arr>
+  <list>
+    <float>0</float>
+    <float>0.1</float>
+    <float>0.2</float>
+    <float>0.3</float>
+    <float>0.4</float>
+    <float>0.5</float>
+    <float>0.6</float>
+    <float>0.7</float>
+  </list>
+</XMLTestClass>
