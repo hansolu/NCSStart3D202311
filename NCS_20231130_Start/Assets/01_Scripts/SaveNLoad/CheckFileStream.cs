@@ -112,18 +112,18 @@ public class CheckFileStream : MonoBehaviour
 
     void PathFuncCheck()
     {
-        //File.Copy("testdat.txt", "testdat.dat", true);//복사. 세번쨰 인자로 true를 줬기때문에 덮어쓰기 되었음
-        //File.Move("testdat.txt", "testdat2.dat");//이동. 첫번째 인자의 파일을 두번째 인자 사항으로 변경시킴.
-        //if (File.Exists("testdat.dat")) //이파일이 존재한다면
-        //{
-        //    Debug.Log("testdat.dat 파일이 존재함");
-        //    File.Delete("testdat.dat"); //그 파일을 없애라
-        //    Debug.Log("파일 삭제함");
-        //}
-        //else
-        //{
-        //    Debug.Log("testdat.dat 파일이 없음");
-        //}
+        File.Copy("testdat.txt", "testdat.dat", true);//복사. 세번쨰 인자로 true를 줬기때문에 덮어쓰기 되었음
+        File.Move("testdat.txt", "testdat2.dat");//이동. 첫번째 인자의 파일을 두번째 인자 사항으로 변경시킴.
+        if (File.Exists("testdat.dat")) //이파일이 존재한다면
+        {
+            Debug.Log("testdat.dat 파일이 존재함");
+            File.Delete("testdat.dat"); //그 파일을 없애라
+            Debug.Log("파일 삭제함");
+        }
+        else
+        {
+            Debug.Log("testdat.dat 파일이 없음");
+        }
 
         #region File클래스에서 입력하기
         ////반복적이거나 내용이 긴것이 자꾸 붙는다면. stringbuilder로 선언하고 거기에다가 append해서 내용 다 붙이고 마지막으로

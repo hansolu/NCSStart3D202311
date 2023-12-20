@@ -69,7 +69,8 @@ public class XMLTestClass
     public string s;
     public int[] arr;
     public List<float> list = new List<float>();
-    
+    //딕셔너리가 안됨 
+
     public XMLTestClass() //데이터를 랜덤으로 임의로 채움
     {
         i = Random.Range(1, 10);

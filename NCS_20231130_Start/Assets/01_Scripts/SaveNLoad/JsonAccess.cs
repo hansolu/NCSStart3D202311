@@ -23,6 +23,8 @@ public class JsonAccess : MonoBehaviour
         byte[] data = new byte[filestream.Length]; 
         filestream.Read(data, 0, data.Length);//읽어들일 데이터와 크기를 직접 지정함...
         filestream.Close(); //할일이 끝났으니 close
+
+
         string jsondata = Encoding.UTF8.GetString(data); //이 읽어들인 jsondata가 json형식이기 떄문에 
         //예를들어 "i": 4 이런식의 상태ㅣ....
 
@@ -35,6 +37,9 @@ public class JsonAccess : MonoBehaviour
     {
         JsonTestClass test = new JsonTestClass();
         test.ShowInfo();//만들어진 제이슨 내용 확인
+
+
+
         string jsondata = JsonConvert.SerializeObject(test, Formatting.Indented);//두번쨰 인자로 Formatting ~ 지정을 안하면 보기좋게 나오지 않음.....
                 
 
@@ -49,6 +54,7 @@ public class JsonAccess : MonoBehaviour
         //이렇게 쓰는 방법도 있는데, 이거보다는 streamWrite내지 binarywriter쓰는게 좀더 안전함
         byte[] data = Encoding.UTF8.GetBytes(jsondata); //
         filestream.Write(data, 0, data.Length);
+
         filestream.Close();
 
         //2 File.WriteAlltext 로 쓰기
