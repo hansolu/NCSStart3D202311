@@ -18,7 +18,11 @@ public class BaseObjectInfo : MonoBehaviour
 
     Vector3 vec = Vector3.zero;
 
-    public void SetInfo(SavedObjectInfo info)
+    public void SetInfo(SavedObjectInfo info) //savedObjectInfo ==
+                                              //제이슨파일에서 읽어온 데이터의 원본...원본데이터...
+                                              //후에 기획자가 데이터파일을 준다면
+                                              //해당 데이터파일을 읽어서 내가 쓸수있게
+                                              //클래스상태로 가공해둔 그 데이터.
     {
         this.Type = (AllEnum.ObjectType)info.ObjectType;
         this.HP = Random.Range( info.HP_Min, info.HP_Max);

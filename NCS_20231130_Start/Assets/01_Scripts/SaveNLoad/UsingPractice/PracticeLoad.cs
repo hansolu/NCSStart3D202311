@@ -41,6 +41,8 @@ public class PracticeLoad : MonoBehaviour
     {
         string jsondata = File.ReadAllText(filepath);
         SavedObjectInfoList savelist = JsonConvert.DeserializeObject<SavedObjectInfoList>(jsondata); //내 클래스에 맞춰서 변환해줌...
+        
+        //데이터 원본 담는 딕셔너리에 오브젝트 타입과 데이터로 따로 등록해둔것
         for (int i = 0; i < savelist.list.Count; i++)
         {
             AllBaseInfos.Add((AllEnum.ObjectType)savelist.list[i].ObjectType, savelist.list[i]);
