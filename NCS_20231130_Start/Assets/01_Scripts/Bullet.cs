@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
         cor = null;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) 
     {
         isCrash = true;
         if (cor !=null)
@@ -79,8 +79,8 @@ public class Bullet : MonoBehaviour
             {
                 hit.Hit(damage);
             }
-        }
+        }                
 
         GameManager.Instance.ReturnBullet(this);
-    }
+    }     
 }
