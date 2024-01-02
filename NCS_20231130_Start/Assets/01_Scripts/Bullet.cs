@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour
     public float damage = 0; //이 총알 주인의 데미지
     AllEnum.Type OwnerType = AllEnum.Type.End; //아군이 쏜 총알이 아군에 맞거나, 적군 총알이 적에게 맞았을때 피해주는 상황을 피하기 위함
     Coroutine cor = null; //아무것도 못맞췄을때 일정시간후에 ㅇ비활성화 하기 위함. 
-    bool isCrash = false;
+    bool isCrash = false;        
+
     public void Init(Transform parentTr, float damage, AllEnum.Type type)
     {
         gameObject.SetActive(true); //사실 밖에서 해주는게 더 나음.
@@ -63,8 +64,22 @@ public class Bullet : MonoBehaviour
         cor = null;
     }
 
-    void OnTriggerEnter(Collider other) 
-    {
+    //void OnCollisionEnter(Collision collision) //Collision 충돌 정보~~~의 모음. 충돌했을때의 정보. 
+    //{            
+    //    ResourceManager.Instance.SetEffect(
+    //        collision.GetContact(0).point,  //부딪힌지점
+    //        Quaternion.LookRotation( -collision.GetContact(0).normal));   //collision.GetContact(0).normal 총알 진행방향과 같음.
+    //    //총알의 진행방향과 반대가 되어야 정상적인 출력이 가능해짐...
+    //}
+
+    void OnTriggerEnter(Collider other) //충돌체 에 대한 내용. 나와 충돌한 상대 충돌체... 
+    {        
+        //뭐가됐건 이펙트 출력
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitinfo))
+        {
+            ResourceManager.Instance.SetEffect(hitinfo.point, Quaternion.LookRotation(-hitinfo.normal));
+        }                
+
         isCrash = true;
         if (cor !=null)
         {
@@ -79,8 +94,9 @@ public class Bullet : MonoBehaviour
             {
                 hit.Hit(damage);
             }
-        }                
+        }                     
 
         GameManager.Instance.ReturnBullet(this);
-    }     
+    }
+
 }

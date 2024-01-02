@@ -14,6 +14,15 @@ public class ResourceManager : Singleton<ResourceManager>
     [SerializeField]
     int[] MaxCount;// = new int[5]{ 10,20,30,40,50 };
 
+    //이펙트 프리팹 원본
+    //public GameObject[] effects;
+    //이펙트 오브젝트 풀...
+    //public Dictionary< Enum 이펙트타입,List<GameObject>> EffectDic = new Dictionary..;
+    //보통 위처럼 오브젝트 풀형식으로 만들어야함
+    public GameObject BulletEffectPrefab;
+    GameObject bulletEffect;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +33,8 @@ public class ResourceManager : Singleton<ResourceManager>
         {
             MaxCount[i] = (i + 1) * 5;
         }
+        bulletEffect = Instantiate(BulletEffectPrefab);
+        bulletEffect.SetActive(false);
     }
 
     //필드에 아이템 생성
@@ -50,4 +61,19 @@ public class ResourceManager : Singleton<ResourceManager>
     //{
     //    해당 타입중에 랜덤으로 아이템 반환...
     //}
+
+    //후에 이펙트 오브젝트 풀을 만들고 관리하게된다면
+    //public void SetEffect(Enum이펙트타입, Vector3 position, Quaternion quat)
+    //{    
+    //    EffectDic[이펙트타입].transform.position = position;
+    //    EffectDic[이펙트타입].transform.rotation = quat;
+    //    EffectDic[이펙트타입].SetActive(true);
+    //}
+
+    public void SetEffect( Vector3 position, Quaternion quat)
+    {
+        bulletEffect.transform.position = position;
+        bulletEffect.transform.rotation = quat;
+        bulletEffect.SetActive(true);
+    }
 }

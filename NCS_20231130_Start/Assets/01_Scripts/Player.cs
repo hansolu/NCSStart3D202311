@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour,IHit
 {
-    float x = 0;
+    float xval = 0;
     Vector3 vec = Vector3.zero;
     Animator anim;
     float speed = 0;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour,IHit
     [SerializeField]
     SkinnedMeshRenderer renderer; //옷을 입힐 대상. 
     public Material[] bodies; //옷 시리즈
-        
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -37,7 +37,14 @@ public class Player : MonoBehaviour,IHit
 
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            xval += Input.GetAxis("Mouse X") * 2;
+            transform.rotation = Quaternion.Euler(0, xval, 0);            
+        }
         //x = Input.GetAxis("Horizontal");//회전
+        //Vector3.right * Input.GetAxis("Horizontal") + Vector3.forward * Input.GetAxis("Vertical")
+
         vec.x = Input.GetAxis("Horizontal");//회전으로 썼던것을 되돌림
         vec.z = Input.GetAxis("Vertical");
 
@@ -65,7 +72,7 @@ public class Player : MonoBehaviour,IHit
 
         anim.SetFloat("Speed", speed);
         //vec = vec.normalized; //회전할때는 x값을 좌측이동으로 안썼어서..
-        vec = vec.normalized; //복구
+        vec = vec.normalized; //복구        
         transform.Translate(vec * Time.deltaTime * speed);
         //transform.Rotate(0,x,0);//회전
 
