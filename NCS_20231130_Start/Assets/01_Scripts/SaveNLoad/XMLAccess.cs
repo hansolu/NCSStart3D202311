@@ -9,19 +9,44 @@ public class XMLAccess : MonoBehaviour
 {
     string filepath = "";
     void Start()
-    {        
-        filepath = Path.Combine(Application.dataPath, "xmltest.xml");
-
+    {
+        //filepath = Path.Combine(Application.dataPath, "xmltest.xml");        
+        filepath = Path.Combine(Application.dataPath, "TestItemXML.xml");
         //Save();
         Load();
+
+        //LoadItemArrayTest();
+    }
+    void LoadItemArrayTest()
+    {        
+        XmlDocument xml = new XmlDocument();
+        xml.Load(filepath);
+
+        List<XMLTestItemClass> list = new List<XMLTestItemClass>();        
+        foreach (XmlNode item in xml.GetElementsByTagName("Item"))
+        {
+            list.Add(new XMLTestItemClass(item["Index"].InnerText,
+                item["Name"].InnerText,
+                item["Type"].InnerText,
+                item["HP"].InnerText,
+                item["Att"].InnerText
+                ));
+        }
+        
+        for (int i = 0; i < list.Count; i++)
+        {
+            list[i].ShowInfo();
+        }
     }
 
     void Load()
     {
         XmlSerializer xml = new XmlSerializer(typeof(XMLTestClass));
+        //XmlSerializer xml = new XmlSerializer(typeof(XMLTestItemListClass));
         FileStream filestream = new FileStream(filepath, FileMode.Open);
 
         XMLTestClass test = xml.Deserialize(filestream) as XMLTestClass;
+        //XMLTestItemListClass test = xml.Deserialize(filestream) as XMLTestItemListClass; 
         filestream.Close();
 
         test.ShowInfo();
@@ -60,6 +85,42 @@ public class XMLAccess : MonoBehaviour
     }
 }
 
+//json은 되지만 xml은 안됨
+//public class XMLTestItemListClass
+//{
+//    public List<XMLTestItemClass> list = new List<XMLTestItemClass>();
+
+//    public void ShowInfo()
+//    {
+//        for (int i = 0; i < list.Count; i++)
+//        {
+//            list[i].ShowInfo();
+//        }
+//    }
+//}
+
+public class XMLTestItemClass
+{
+    public int Index;
+    public string Name;
+    public string Type;
+    public float HP;
+    public float Att;
+
+    public XMLTestItemClass(string index, string name, string type, string hp, string att)
+    {
+        Index = int.Parse( index);
+        this.Name = name;
+        this.Type = type;
+        this.HP = float.Parse(hp);
+        this.Att = float.Parse(att);
+    }
+
+    public void ShowInfo()
+    {
+        Debug.Log($"Index : {Index}\nName : {Name}\nType : {Type}\nHP : {HP}\nATT : {Att}\n");
+    }
+}
 public class XMLTestClass
 {
     public int i;

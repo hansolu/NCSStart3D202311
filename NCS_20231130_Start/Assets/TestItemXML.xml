@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Item>
+		<Index>1</Index>
+		<Name>포션1</Name>
+		<Type>Potion</Type>
+		<HP>10</HP>
+		<Att>0</Att>
+	</Item>
+	<Item>
+		<Index>2</Index>
+		<Name>검</Name>
+		<Type>Weapon</Type>
+		<HP>0</HP>
+		<Att>10</Att>
+	</Item>
+	<Item>
+		<Index>3</Index>
+		<Name>갑옷</Name>
+		<Type>Armor</Type>
+		<HP>100</HP>
+		<Att>0</Att>
+	</Item>
+	<Item>
+		<Index>4</Index>
+		<Name>포션2</Name>
+		<Type>Potion</Type>
+		<HP>20</HP>
+		<Att>0</Att>
+	</Item>
+</Root>
