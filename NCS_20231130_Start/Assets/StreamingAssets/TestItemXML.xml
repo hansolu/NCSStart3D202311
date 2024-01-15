@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Item>
+		<Index>1</Index>
+		<Name>Æ÷¼Ç1</Name>
+		<Type>Potion</Type>
+		<HP>10</HP>
+		<Att>0</Att>
+	</Item>
+	<Item>
+		<Index>2</Index>
+		<Name>°Ë</Name>
+		<Type>Weapon</Type>
+		<HP>0</HP>
+		<Att>10</Att>
+	</Item>
+	<Item>
+		<Index>3</Index>
+		<Name>°©¿Ê</Name>
+		<Type>Armor</Type>
+		<HP>100</HP>
+		<Att>0</Att>
+	</Item>
+	<Item>
+		<Index>4</Index>
+		<Name>Æ÷¼Ç2</Name>
+		<Type>Potion</Type>
+		<HP>20</HP>
+		<Att>0</Att>
+	</Item>
+</Root>

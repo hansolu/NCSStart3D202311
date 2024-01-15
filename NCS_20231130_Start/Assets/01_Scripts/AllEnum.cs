@@ -53,10 +53,12 @@ public class AllEnum
 
     public enum ItemType
     { 
-        None,
+        None,        
         Food,
         Sword,
         Armor,
+        Potion,
+        Weapon,
 
         End
     }
@@ -66,6 +68,16 @@ public class AllEnum
         Cube,
         Sphere,
         Capsule,
+
+        End
+    }
+
+    public enum StatType
+    { 
+        HP,
+        MP,
+        SP,
+        Speed,
 
         End
     }

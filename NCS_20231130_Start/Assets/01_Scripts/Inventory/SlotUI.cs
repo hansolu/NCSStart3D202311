@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 //슬롯은 UI를 위한거고
 //실제 모든 데이터들은 아이템...
 public class SlotUI : MonoBehaviour, IPointerClickHandler,
-    IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+    IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler    
 {
     List<RaycastResult> rayResults = new List<RaycastResult>();
 
@@ -50,7 +51,7 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler,
 
     //eventData.position 
     public void OnBeginDrag(PointerEventData eventData) //드래그시작
-    {
+    {        
         //만약 내가 아무 내용이없다면 의미없음..
         if (isExist == false)
         {
@@ -60,11 +61,11 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler,
         img.gameObject.SetActive(false);
 
         //내 마우스를 따라서 uimanager가 가지고 있는 FollowDragItem을 마우스를 따라다니게 만들면 됨.
-        UIManager.Instance.SetFollowDragItem(true, img.sprite, txt.text);
+        UIManager.Instance.SetFollowDragItem(true, img.sprite, txt.text);        
     }
 
     public void OnDrag(PointerEventData eventData) //드래그중
-    {
+    {                
         if (isExist == false)
         {
             return;
@@ -113,7 +114,7 @@ public class SlotUI : MonoBehaviour, IPointerClickHandler,
         else //뭔가 슬롯이 아닌 빈공간을 선택했다면 아이템 버리기...
         {
             //필드에 생성을 해야한다면
-            ResourceManager.Instance.CreateFieldItem( InvenManager.Instance.GetItemInfo(InventoryIdx, Index));
+            ResourceManager.Instance.CreateFieldItem( InvenManager.Instance.GetItemInfo(InventoryIdx, Index).Index);
 
             //이 슬롯에 해당되는 친구를 버려달라... 요청해야함 
             //그러면 필요한 것이 인벤토리 고유번호 + 슬롯 넘버. 해당 슬롯넘버는 내가 가지고 있지만, 

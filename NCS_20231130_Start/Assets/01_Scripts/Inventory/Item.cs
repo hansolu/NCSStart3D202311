@@ -7,6 +7,7 @@ using UnityEngine;
 //다양한 아이템들은 후에 이 친구를 상속받아서 구현하게 될 것임...
 public class Item //: MonoBehaviour //해당 Item은 부모클래스 로써 만들어도되고, 혹은 구조체로 만들어도됨.
 {
+    //protected ItemInfo info;
     //Sprite sprite;//아이템이미지 //string....
     //아이템 개수
     //아이템의 고유번호 -이름이 됐건 숫자로 관리하건....
@@ -22,10 +23,12 @@ public class Item //: MonoBehaviour //해당 Item은 부모클래스 로써 만들어도되고, 
 
     public int AbleCount => MaxCount - Count; //이 슬롯에 추가로 넣을 수 있는 개수. (최대개수-현재개수)
 
+
     public Item()
     {
         Clear();
     }
+    
     public Item(int index, int count, int maxCount)
     {
         this.Index = index;
@@ -78,6 +81,11 @@ public class Item //: MonoBehaviour //해당 Item은 부모클래스 로써 만들어도되고, 
         }
 
         return returncount;
+    }
+
+    public virtual void Use(PlayerForInven player)
+    { 
+
     }
 }
 

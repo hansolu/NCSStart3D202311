@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
+    [SerializeField]
     GraphicRaycaster graphicRay;
     public GraphicRaycaster GraphicRay=> graphicRay;
 
@@ -24,7 +25,10 @@ public class UIManager : Singleton<UIManager>
         
     void Start()
     {
-        graphicRay = GetComponent<GraphicRaycaster>();
+        if (graphicRay == null)
+        {
+            graphicRay = GetComponent<GraphicRaycaster>();
+        }        
         UIObjects.Add(AllEnum.UIKind.Inventory, invenUI.gameObject);
         followItem.gameObject.SetActive(false);
         explain.gameObject.SetActive(false);
