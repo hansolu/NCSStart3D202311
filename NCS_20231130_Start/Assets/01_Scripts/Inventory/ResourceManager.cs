@@ -92,14 +92,9 @@ public class ResourceManager : Singleton<ResourceManager>
     //}
     public void CreateFieldItem(int index = -1) //필드용. 필드에 생성되는 오브젝트형의 아이템.
     {
-        //if (index >= 0) //이러면 지정 아이템
-        //{
-
-        //}
-        //else //이거는 랜덤아이템
-        //{
-        //}
+        if (index < 0) //이러면 지정 아이템                
         index = Random.Range(0, AllItemInfos.Length);
+
         ItemObject objsc = Instantiate(ItemPrefab, new Vector3(Random.Range(-10,10),0, Random.Range(-10, 10)), Quaternion.identity).GetComponent<ItemObject>();
         objsc.SetInfo(index);
     }
